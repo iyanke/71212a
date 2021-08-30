@@ -37,13 +37,10 @@ project {
         feature {
             id = "PROJECT_EXT_3"
             type = "JetBrains.SharedResources"
-            param("values", """
-                a
-                b
-                c
-            """.trimIndent())
+            param("values", "%yrdt%")
             param("name", "val1")
             param("type", "custom")
+            param("enabled", "true")
         }
     }
 }
