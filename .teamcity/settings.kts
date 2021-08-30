@@ -25,13 +25,27 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2020.1"
+version = "2021.1"
 
 project {
 
     vcsRoot(HttpsGithubComIyankeBigdataRefsHeadsMaster)
 
     buildType(Build)
+
+    features {
+        feature {
+            id = "PROJECT_EXT_3"
+            type = "JetBrains.SharedResources"
+            param("values", """
+                a
+                b
+                c
+            """.trimIndent())
+            param("name", "val1")
+            param("type", "custom")
+        }
+    }
 }
 
 object Build : BuildType({
@@ -73,4 +87,5 @@ object HttpsGithubComIyankeBigdataRefsHeadsMaster : GitVcsRoot({
         userName = "iyanke"
         password = "credentialsJSON:f79215b2-e8c3-480e-9933-e54dd6108704"
     }
+    param("useAlternates", "true")
 })
